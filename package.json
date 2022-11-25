@@ -1,5 +1,6 @@
 {
   "name": "@hexlet/code",
+  "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/Fortik1/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Fortik1/frontend-project-44/actions)",
   "main": "index.js",
