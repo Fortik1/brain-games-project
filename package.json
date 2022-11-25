@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Fortik1/brain-games/issues"
   },
-  "homepage": "https://github.com/Fortik1/brain-games#readme"
+  "homepage": "https://github.com/Fortik1/brain-games#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
