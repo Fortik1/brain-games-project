@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/Fortik1/brain-games#readme",
   "dependencies": {
-    "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0"
   }
 }
