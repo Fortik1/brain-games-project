@@ -9,7 +9,7 @@ console.log(`Hello, ${name}!`);
 console.log(`What is the result of the expression?`);
 
 for (var i = 0; i < 3; i++) {
-    var znak = randomNumber(2),
+    var znak = randomNumber(3),
     otvet = 0,
     numberOne = randomNumber(),
     numberTwo = randomNumber();
@@ -20,7 +20,7 @@ for (var i = 0; i < 3; i++) {
     } else if (znak === 1) {
         console.log(`Question: ${numberOne} - ${numberTwo}`);
         otvet = numberOne - numberTwo;
-    } else {
+    } else if (znak === 2) {
         console.log(`Question: ${numberOne} * ${numberTwo}`);
         otvet = numberOne * numberTwo;
     }
