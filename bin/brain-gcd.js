@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {NOD, randomNumber} from "../src/index.js";
+import {NOD, randomNumber, neydacha} from "../src/index.js";
 import {userName} from "../src/cli.js";
 import readlineSync from "readline-sync";
 
@@ -16,10 +16,9 @@ for (var i = 0; i < 3; i++) {
     console.log(`Question: ${numberOne} ${numberTwo}`);
     var otvetUser = readlineSync.question(`Your answer: `);
 
-    if (Number(otvetUser) === otvet) {
-        console.log(`Correct!`);
-    } else {
-        console.log(`'${otvetUser}' if wrong answer  ;(. Correct answer was '${otvet}'. \nLet's try again, ${name}!`);
+    var result = neydacha(otvet, otvetUser, name);
+
+    if (result === 1) {
         break;
     }
 
