@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {randomNumber, neydacha} from "../src/index.js";
+import {randomNumber, neydacha, Congratulations} from "../src/index.js";
 import {userName} from "../src/cli.js";
 import readlineSync from "readline-sync";
 
@@ -33,7 +33,5 @@ for (var i = 0; i < 3; i++) {
         break;
     }
 
-    if (i === 3) {
-        console.log(`Congratulations, ${name}!`);
-    }
+    Congratulations(name, i);
 }
