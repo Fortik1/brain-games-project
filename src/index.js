@@ -16,3 +16,22 @@ export function neydacha(otvet, otvetUser, name) {
         return 1;
     }
 }
+
+export function Congratulations(name, i) {
+    if (i === 2) {
+        console.log(`Congratulations, ${name}!`);
+    }
+}
+
+export function createArray(numberDis, numberStart, arrayLen) {
+    var array = [];
+    array.push(numberStart);
+    for (var l = 0; l < arrayLen; l++) {
+        array.push(array[l] + numberDis);
+    }
+    var index = randomNumber(arrayLen),
+    otvet = array[index];
+    array[index] = '...' ;
+    console.log(`Question: ${array.join(' ')}`);
+    return otvet;
+}
