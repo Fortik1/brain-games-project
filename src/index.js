@@ -9,11 +9,20 @@ export function NOD (x, y) {
 }
 
 export function neydacha(otvet, otvetUser, name) {
-    if (Number(otvetUser) === otvet) {
-        console.log(`Correct!`);
+    if (Number(otvetUser) === Number(otvet)) {
+        if (Number(otvetUser) === otvet) {
+            console.log(`Correct!`);
+        } else {
+            console.log(`'${otvetUser}' if wrong answer  ;(. Correct answer was '${otvet}'. \nLet's try again, ${name}!`);
+            return 1;
+        }
     } else {
-        console.log(`'${otvetUser}' if wrong answer  ;(. Correct answer was '${otvet}'. \nLet's try again, ${name}!`);
-        return 1;
+        if (otvetUser === otvet) {
+            console.log(`Correct!`);
+        } else {
+            console.log(`'${otvetUser}' if wrong answer  ;(. Correct answer was '${otvet}'. \nLet's try again, ${name}!`);
+            return 1;
+        }
     }
 }
 
@@ -34,4 +43,15 @@ export function createArray(numberDis, numberStart, arrayLen) {
     array[index] = '...' ;
     console.log(`Question: ${array.join(' ')}`);
     return otvet;
+}
+
+export function primeNumber() {
+    var number = randomNumber(); 
+    console.log(`Question: ${number}`);
+    for (var i = 2;i < number / 2; i++) {
+        if (number % i === 0) {
+            return 'no';
+        }
+    }
+    return 'yes';
 }
