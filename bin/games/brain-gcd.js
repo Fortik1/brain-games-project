@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/*
 import {NOD, randomNumber, neydacha, Congratulations} from "../../src/index.js";
 import {userName} from "../../src/cli.js";
 import readlineSync from "readline-sync";
@@ -24,4 +23,4 @@ for (var i = 0; i < 3; i++) {
     }
 
     Congratulations(name, i);
-} */
+} 
