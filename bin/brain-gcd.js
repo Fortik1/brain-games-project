@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import {NOD, randomNumber, neydacha, Congratulations} from "../../src/index.js";
-import {userName} from "../../src/cli.js";
+import {NOD, randomNumber, neydacha, Congratulations} from "../src/index.js";
+import {userName} from "../src/cli.js";
 import readlineSync from "readline-sync";
 
 var name = userName();
