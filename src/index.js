@@ -41,7 +41,7 @@ export function createArray(numberDis, numberStart, arrayLen) {
     var index = randomNumber(arrayLen),
     otvet = array[index];
     array[index] = '..' ;
-    console.log(`Question: ${array.join(' ')}`);
+    console.log(`Question:`, array.join(' '));
     return otvet;
 }
 
