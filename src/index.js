@@ -49,12 +49,18 @@ export function createArray() {
 }
 
 export function primeNumber() {
-    var number = randomNumber(29) + 2; 
+    var number = randomNumber(); 
     console.log(`Question: ${number}`);
-    for (var i = 2;i < number / 2; i++) {
-        if (number % i === 0) {
+    if (number ===1 )  {
+        return 'no';
+    }else if(number === 2)  {
+        return 'yes';
+    } else   {
+        for(var x = 2; x < number; x++)  {
+          if(number % x === 0) {
             return 'no';
+          }
         }
+        return 'yes';  
     }
-    return 'yes';
 }
