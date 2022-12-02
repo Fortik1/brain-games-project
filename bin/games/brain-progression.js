@@ -9,7 +9,7 @@ console.log(`Hello, ${name}!`);
 console.log(`What number is missing in the progression?`);
 
 for (var i = 0; i < 3; i++) {
-    var otvet = createArray(numberDis, numberStart, arrayLen),
+    var otvet = createArray(),
     otvetUser = readlineSync.question(`Your answer: `);
     
     var result = neydacha(otvet, otvetUser, name);
