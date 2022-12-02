@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import {userName} from "../src/cli.js";
-import {neydacha, Congratulations, primeNumber} from "../src/index.js";
+import {userName} from "../../src/cli.js";
+import {neydacha, Congratulations, primeNumber} from "../../src/index.js";
 import readlineSync from "readline-sync";
 
 var name = userName();
