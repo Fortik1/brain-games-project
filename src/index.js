@@ -36,7 +36,7 @@ export function createArray() {
     var array = [],
     numberDis = randomNumber(6) + 1,
     numberStart = randomNumber(),
-    arrayLen = randomNumber(5) + 5;
+    arrayLen = 10;
     array.push(numberStart);
     for (var l = 0; l < arrayLen; l++) {
         array.push(array[l] + numberDis);
