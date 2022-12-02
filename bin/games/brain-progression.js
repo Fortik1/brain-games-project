@@ -9,10 +9,7 @@ console.log(`Hello, ${name}!`);
 console.log(`What number is missing in the progression?`);
 
 for (var i = 0; i < 3; i++) {
-    var numberDis = randomNumber(6) + 1,
-    numberStart = randomNumber(),
-    arrayLen = randomNumber(5) + 5,
-    otvet = createArray(numberDis, numberStart, arrayLen),
+    var otvet = createArray(numberDis, numberStart, arrayLen),
     otvetUser = readlineSync.question(`Your answer: `);
     
     var result = neydacha(otvet, otvetUser, name);
@@ -24,4 +21,3 @@ for (var i = 0; i < 3; i++) {
     Congratulations(name, i);
     
 }
-
