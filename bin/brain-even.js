@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import {userName} from "../src/cli.js";
+import {Congratulations, neydacha} from "../src/index.js";
 import readlineSync from 'readline-sync';
 
 var name = userName();
@@ -16,16 +17,12 @@ console.log(`Question: ${random}`);
 otvet = readlineSync.question(`Your answer: `);
 yesOrNo = random % 2 === 0 ? 'yes' : 'no';
 
-if (yesOrNo === otvet) {
-    console.log('Correct!');
-} else {
-    console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.`);
-    console.log(`Let's try again, ${name}`);
+var result = neydacha(yesOrNo, otvet, name);
+
+if (result === 1) {
     break;
 }
 
-if (i === 2) {
-    console.log(`Congratulations, ${name}!`);
-}
+Congratulations(name, i);
 
 }
