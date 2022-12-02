@@ -7,7 +7,8 @@
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
-    "brain-progression": "bin/brain-gcd.js"
+    "brain-progression": "bin/brain-gcd.js",
+    "brain-prime": "bin/brain-prime.js"
   },
   "description": "[![Actions Status](https://github.com/Fortik1/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Fortik1/frontend-project-44/actions)",
   "main": "index.js",
