@@ -51,7 +51,7 @@ export function createArray() {
 export function primeNumber() {
     var number = randomNumber(); 
     console.log(`Question: ${number}`);
-    if (number ===1 )  {
+    if (number === 1 || number === 0)  {
         return 'no';
     }else if(number === 2)  {
         return 'yes';
