@@ -1,5 +1,5 @@
 #!/usr/bin/env node 
-import {randomNumber, neydacha, Congratulations, createArray} from "../src/index.js";
+import {neydacha, Congratulations, createArray} from "../src/index.js";
 import {userName} from "../src/cli.js";
 import readlineSync from "readline-sync";
 
