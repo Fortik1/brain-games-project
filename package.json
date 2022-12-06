@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/Fortik1/brain-games.git"
   },
-  "author": "",
+  "author": "Daniil",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Fortik1/brain-games/issues"
@@ -31,6 +31,9 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "eslint": "^8.28.0"
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.0.0"
   }
 }
