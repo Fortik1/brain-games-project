@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 import {
   NOD, randomNumber, neydacha, Congratulations,
 } from '../src/index.js';
-import * as userName from '../src/cli.js';
+import userName from '../src/cli.js';
 
 const name = userName();
 

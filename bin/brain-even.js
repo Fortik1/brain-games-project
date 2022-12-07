@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import * as userName from '../src/cli.js';
+import userName from '../src/cli.js';
 import { Congratulations, neydacha } from '../src/index.js';
 
 const name = userName();

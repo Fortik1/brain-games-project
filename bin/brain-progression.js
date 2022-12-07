@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { neydacha, Congratulations, createArray } from '../src/index.js';
-import * as userName from '../src/cli.js';
+import userName from '../src/cli.js';
 
 const name = userName();
 
