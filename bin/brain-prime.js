@@ -1,17 +1,17 @@
 #!/usr/bin/env node
-import {userName} from "../src/cli.js";
-import {neydacha, Congratulations, primeNumber} from "../src/index.js";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import * as userName from '../src/cli.js';
+import { neydacha, Congratulations, primeNumber } from '../src/index.js';
 
-var name = userName();
+const name = userName();
 
 console.log(`Hello, ${name}!`);
-console.log(`Answer "yes" if given number is prime. Otherwise answer "no".`);
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-for (var i = 0; i < 3; i++) {
-    var otvet = primeNumber(),
-    otvetUser = readlineSync.question("Your answer: "),
-    res = neydacha(otvet, otvetUser, name);
-    if (res === 1) break;
-    Congratulations(name, i);
+for (let i = 0; i < 3; i += 1) {
+  const otvet = primeNumber();
+  const otvetUser = readlineSync.question('Your answer: ');
+  const res = neydacha(otvet, otvetUser, name);
+  if (res === 1) break;
+  Congratulations(name, i);
 }

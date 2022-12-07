@@ -10,12 +10,12 @@ parserOptions:
   ecmaVersion: latest
   sourceType: module
 
-extedns:
-  -'airbnb-base'
+extends:
+  - 'airbnb-base'
 
 rules:
   no-console: 0
-  import/extensions: nodejs version
+  import/extensions: 
     - error
     - ignorePackages
     - js: always

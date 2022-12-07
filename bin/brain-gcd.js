@@ -1,26 +1,28 @@
 #!/usr/bin/env node
-import {NOD, randomNumber, neydacha, Congratulations} from "../src/index.js";
-import {userName} from "../src/cli.js";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import {
+  NOD, randomNumber, neydacha, Congratulations,
+} from '../src/index.js';
+import * as userName from '../src/cli.js';
 
-var name = userName();
+const name = userName();
 
 console.log(`Hello, ${name}!`);
-console.log(`Find the greatest common divisor of given numbers.`);
+console.log('Find the greatest common divisor of given numbers.');
 
-for (var i = 0; i < 3; i++) {
-    var numberOne = randomNumber(100) + 1,
-    numberTwo = randomNumber(100) + 1,
-    otvet = NOD(numberOne, numberTwo);
-    
-    console.log(`Question: ${numberOne} ${numberTwo}`);
-    var otvetUser = readlineSync.question(`Your answer: `);
+for (let i = 0; i < 3; i += 1) {
+  const numberOne = randomNumber(100) + 1;
+  const numberTwo = randomNumber(100) + 1;
+  const otvet = NOD(numberOne, numberTwo);
 
-    var result = neydacha(otvet, otvetUser, name);
+  console.log(`Question: ${numberOne} ${numberTwo}`);
+  const otvetUser = readlineSync.question('Your answer: ');
 
-    if (result === 1) {
-        break;
-    }
+  const result = neydacha(otvet, otvetUser, name);
 
-    Congratulations(name, i);
-} 
+  if (result === 1) {
+    break;
+  }
+
+  Congratulations(name, i);
+}

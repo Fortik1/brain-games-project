@@ -1,37 +1,37 @@
 #!/usr/bin/env node
-import {randomNumber, neydacha, Congratulations} from "../src/index.js";
-import {userName} from "../src/cli.js";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import { randomNumber, neydacha, Congratulations } from '../src/index.js';
+import * as userName from '../src/cli.js';
 
-var name = userName();
+const name = userName();
 
 console.log(`Hello, ${name}!`);
-console.log(`What is the result of the expression?`);
+console.log('What is the result of the expression?');
 
-for (var i = 0; i < 3; i++) {
-    var znak = randomNumber(3),
-    otvet = 0,
-    numberOne = randomNumber(),
-    numberTwo = randomNumber();
+for (let i = 0; i < 3; i += 1) {
+  const znak = randomNumber(3);
+  let otvet = 0;
+  const numberOne = randomNumber();
+  const numberTwo = randomNumber();
 
-    if (znak === 0) {
-        console.log(`Question: ${numberOne} + ${numberTwo}`);
-        otvet = numberOne + numberTwo;
-    } else if (znak === 1) {
-        console.log(`Question: ${numberOne} - ${numberTwo}`);
-        otvet = numberOne - numberTwo;
-    } else if (znak === 2) {
-        console.log(`Question: ${numberOne} * ${numberTwo}`);
-        otvet = numberOne * numberTwo;
-    }
+  if (znak === 0) {
+    console.log(`Question: ${numberOne} + ${numberTwo}`);
+    otvet = numberOne + numberTwo;
+  } else if (znak === 1) {
+    console.log(`Question: ${numberOne} - ${numberTwo}`);
+    otvet = numberOne - numberTwo;
+  } else if (znak === 2) {
+    console.log(`Question: ${numberOne} * ${numberTwo}`);
+    otvet = numberOne * numberTwo;
+  }
 
-    var otvetUser = readlineSync.question(`Your answer: `);
-    
-    var result = neydacha(otvet, otvetUser, name);
+  const otvetUser = readlineSync.question('Your answer: ');
 
-    if (result === 1) {
-        break;
-    }
+  const result = neydacha(otvet, otvetUser, name);
 
-    Congratulations(name, i);
+  if (result === 1) {
+    break;
+  }
+
+  Congratulations(name, i);
 }

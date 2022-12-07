@@ -1,23 +1,22 @@
-#!/usr/bin/env node 
-import {neydacha, Congratulations, createArray} from "../src/index.js";
-import {userName} from "../src/cli.js";
-import readlineSync from "readline-sync";
+#!/usr/bin/env node
+import readlineSync from 'readline-sync';
+import { neydacha, Congratulations, createArray } from '../src/index.js';
+import * as userName from '../src/cli.js';
 
-var name = userName();
+const name = userName();
 
 console.log(`Hello, ${name}!`);
-console.log(`What number is missing in the progression?`);
+console.log('What number is missing in the progression?');
 
-for (var i = 0; i < 3; i++) {
-    var otvet = createArray(),
-    otvetUser = readlineSync.question(`Your answer: `);
-    
-    var result = neydacha(otvet, otvetUser, name);
-    
-    if (result === 1) {
-        break;
-    }
-    
-    Congratulations(name, i);
-    
+for (let i = 0; i < 3; i += 1) {
+  const otvet = createArray();
+  const otvetUser = readlineSync.question('Your answer: ');
+
+  const result = neydacha(otvet, otvetUser, name);
+
+  if (result === 1) {
+    break;
+  }
+
+  Congratulations(name, i);
 }
