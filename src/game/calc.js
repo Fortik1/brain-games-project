@@ -1,39 +1,47 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { randomNumber, neydacha, Congratulations } from '../index.js';
+import { getRandomNumber, checkAnswer, сongratulations } from '../index.js';
 import userName from '../cli.js';
 
 export default () => {
-  const name = userName();
+  const nameUser = userName();
+  const roundToWin = 3;
 
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${nameUser}!`);
   console.log('What is the result of the expression?');
 
-  for (let i = 0; i < 3; i += 1) {
-    const znak = randomNumber(3);
-    let otvet = 0;
-    const numberOne = randomNumber();
-    const numberTwo = randomNumber();
+  for (let i = 0; i < roundToWin; i += 1) {
+    const signs = ['+', '-', '*'];
+    const activeSign = signs[getRandomNumber(0, 3)];
+    const numberOne = getRandomNumber();
+    const numberTwo = getRandomNumber();
+    let answer;
 
-    if (znak === 0) {
-      console.log(`Question: ${numberOne} + ${numberTwo}`);
-      otvet = numberOne + numberTwo;
-    } else if (znak === 1) {
-      console.log(`Question: ${numberOne} - ${numberTwo}`);
-      otvet = numberOne - numberTwo;
-    } else if (znak === 2) {
-      console.log(`Question: ${numberOne} * ${numberTwo}`);
-      otvet = numberOne * numberTwo;
-    }
+    switch(activeSign) {
+      case '+': {
+        answer = numberOne + numberTwo;
+        break;
+      }
+      case '-': {
+        answer = numberOne - numberTwo;
+        break;
+      }
+      case '*': {
+        answer = numberOne * numberTwo;
+        break;
+      }
+    };
 
-    const otvetUser = readlineSync.question('Your answer: ');
+    console.log(`Question: `, numberOne, activeSign, numberTwo);
 
-    const result = neydacha(otvet, otvetUser, name);
+    const answerUser = readlineSync.question('Your answer: ');
 
-    if (result === 1) {
+    const result = checkAnswer(answer, answerUser, nameUser);
+
+    if (result === 1) { // Stops the game after a loss.
       break;
     }
 
-    Congratulations(name, i);
+    сongratulations(nameUser, i);
   }
 };

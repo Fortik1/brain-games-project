@@ -1,24 +1,40 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { neydacha, Congratulations, createArray } from '../index.js';
+import { checkAnswer, сongratulations, getRandomNumber } from '../index.js';
 import userName from '../cli.js';
 
-export default () => {
-  const name = userName();
+const createProgressionArray = () => {
+  const array = [getRandomNumber()];
+  const range = getRandomNumber(1, 5);
+  const arrayLength = 10;
+  for (let index = 0; index < arrayLength; index++) {
+    array.push(array[index] + range);
+  }
+  const latentNumberIndex = getRandomNumber(0, arrayLength);
+  const answer = array[latentNumberIndex];
+  array[latentNumberIndex] = '..';
+  return { array, answer };
+}
 
-  console.log(`Hello, ${name}!`);
+export default () => {
+  const nameUser = userName();
+  const roundToWin = 3;
+
+  console.log(`Hello, ${nameUser}!`);
   console.log('What number is missing in the progression?');
 
-  for (let i = 0; i < 3; i += 1) {
-    const otvet = createArray();
-    const otvetUser = readlineSync.question('Your answer: ');
+  for (let i = 0; i < roundToWin; i += 1) {
+    const { array, answer } = createProgressionArray();
+    console.log('Question:', array.join(' '));
 
-    const result = neydacha(otvet, otvetUser, name);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    const result = checkAnswer(answer, userAnswer, nameUser);
 
     if (result === 1) {
       break;
     }
 
-    Congratulations(name, i);
+    сongratulations(nameUser, i);
   }
 };
