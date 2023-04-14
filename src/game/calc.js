@@ -32,7 +32,7 @@ export default () => {
       }
     };
 
-    console.log(`Question: `, numberOne, activeSign, numberTwo);
+    console.log(`Question: ${numberOne} ${activeSign} ${numberTwo}`);
 
     const answerUser = readlineSync.question('Your answer: ');
 
