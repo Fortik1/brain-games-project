@@ -7,14 +7,14 @@ const createProgressionArray = () => {
   const array = [getRandomNumber()];
   const range = getRandomNumber(1, 5);
   const arrayLength = 10;
-  for (let index = 0; index < arrayLength; index++) {
+  for (let index = 0; index < arrayLength; index += 1) {
     array.push(array[index] + range);
   }
   const latentNumberIndex = getRandomNumber(0, arrayLength);
   const answer = array[latentNumberIndex];
   array[latentNumberIndex] = '..';
   return { array, answer };
-}
+};
 
 export default () => {
   const nameUser = userName();

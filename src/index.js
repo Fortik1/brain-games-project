@@ -15,7 +15,7 @@ export function checkAnswer(answer, userAnswer, nameUser) {
   } else {
     console.log(`'${userAnswer}' if wrong answer ;(. Correct answer was '${answer}'. \nLet's try again, ${nameUser}!`);
     res = 1;
-  };
+  }
   return res;
 }
 

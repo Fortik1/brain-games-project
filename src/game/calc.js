@@ -17,7 +17,7 @@ export default () => {
     const numberTwo = getRandomNumber();
     let answer;
 
-    switch(activeSign) {
+    switch (activeSign) {
       case '+': {
         answer = numberOne + numberTwo;
         break;
@@ -26,11 +26,10 @@ export default () => {
         answer = numberOne - numberTwo;
         break;
       }
-      case '*': {
+      default: {
         answer = numberOne * numberTwo;
-        break;
       }
-    };
+    }
 
     console.log(`Question: ${numberOne} ${activeSign} ${numberTwo}`);
 
